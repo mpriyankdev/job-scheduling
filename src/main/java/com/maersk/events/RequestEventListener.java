@@ -22,7 +22,7 @@ public class RequestEventListener implements ApplicationListener<Job> {
     private RequestEventPublisher requestEventPublisher;
 
     @Override
-    @Async
+    @Async("threadPoolTaskExecutor")
     public void onApplicationEvent(final Job job) {
 
 
@@ -38,7 +38,6 @@ public class RequestEventListener implements ApplicationListener<Job> {
                 e.printStackTrace();
             }
             requestEventPublisher.publish(job);
-
 
         }
 

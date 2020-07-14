@@ -45,7 +45,5 @@ class RawRequestsHandlingServiceTest {
         doReturn(jobResponse).when(rawRequestToJobResponseService).convert("xyz", input);
 
         Assertions.assertEquals("xyz", rawRequestsHandlingService.dumpRawRequest(input).getJobId());
-
-
     }
 }
